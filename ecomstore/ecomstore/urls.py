@@ -12,5 +12,5 @@ urlpatterns = [
     path('', include("django.contrib.auth.urls")), # <-- added
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'ecomstore.views.handler404'
-handler500 = 'ecomstore.views.handler500'
+handler404 = 'ecomstore.views.file_not_found_404' 
+handler500 = 'ecomstore.views.file_not_found_500' 
