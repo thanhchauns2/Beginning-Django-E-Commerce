@@ -28,7 +28,7 @@
 
     <br /><br />
     
-    <form method="post" action="{% url 'catalog_product' slug=p.slug %}" class="cart">
+    <form method="post" action="/product/{{p.slug}}/" class="cart">
         {% csrf_token %}
         {{ form.as_p }}
         <br />

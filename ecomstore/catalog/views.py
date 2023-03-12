@@ -8,18 +8,20 @@ from django.urls import reverse
 from catalog.models import Category, Product
 
 def index(request):
-    template_name="catalog/index.html"
     page_title = 'Musical Instruments and Sheet Music for Musicians'
-    return render(request, template_name, {'page_title': page_title})
+    return render(request, "catalog/index.html", {'page_title': page_title})
+    # (template_name, locals(),
+    # context_instance=RequestContext(request))
+
 
 def show_category(request, slug):
-    template_name="catalog/category.html"
     c = get_object_or_404(Category, slug=slug)
     products = c.product_set.all()
     page_title = c.name
     meta_keywords = c.meta_keywords
     meta_description = c.meta_description
-    return render(request, template_name, locals())
+    return render(request, "catalog/category.html", {'c': c, 'products': products,
+                                                     'page_title': page_title})
 
 def show_product(request, slug):
     p = get_object_or_404(Product, slug=slug)
@@ -41,7 +43,7 @@ def show_product(request, slug):
             if request.session.test_cookie_worked():
                 request.session.delete_test_cookie()
             url = reverse('show_cart')
-            return redirect(url)
+            return HttpResponseRedirect(url)
     else:
         # it’s a GET, create the unbound form. Note request as a kwarg
         form = ProductAddToCartForm(request=request, label_suffix=':')
