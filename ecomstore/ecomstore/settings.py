@@ -201,6 +201,6 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_COOKIE_SECURE = False 
 CSRF_FAILURE_VIEW = 'ecomstore.views.csrf_failure'
-GOOGLE_CHECKOUT_MERCHANT_ID = 'your id here'
+GOOGLE_CHECKOUT_MERCHANT_ID = '3826-7618-9069'
 GOOGLE_CHECKOUT_MERCHANT_KEY = 'your key here'
 GOOGLE_CHECKOUT_URL = 'https://sandbox.google.com/checkout/api/v2/merchantCheckout/Merchant/' + GOOGLE_CHECKOUT_MERCHANT_ID
