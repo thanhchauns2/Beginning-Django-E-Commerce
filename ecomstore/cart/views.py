@@ -20,6 +20,7 @@ def show_cart(request):
     cart_subtotal = cart.cart_subtotal(request)
     # for Google Checkout button
     merchant_id = settings.GOOGLE_CHECKOUT_MERCHANT_ID
+    client_id = settings.PAYPAL_MERCHANT_ID
     context = {'page_title': page_title, 'cart_items': cart_items,
-                                              'cart_subtotal': cart_subtotal, 'merchant_id':merchant_id}
+                                              'cart_subtotal': cart_subtotal, 'merchant_id':merchant_id, 'client_id' : client_id}
     return render(request, "cart/cart.html", context)
