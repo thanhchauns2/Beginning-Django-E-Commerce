@@ -204,3 +204,5 @@ CSRF_FAILURE_VIEW = 'ecomstore.views.csrf_failure'
 GOOGLE_CHECKOUT_MERCHANT_ID = '3826-7618-9069'
 GOOGLE_CHECKOUT_MERCHANT_KEY = 'your key here'
 GOOGLE_CHECKOUT_URL = 'https://sandbox.google.com/checkout/api/v2/merchantCheckout/Merchant/' + GOOGLE_CHECKOUT_MERCHANT_ID
+
+PAYPAL_MERCHANT_ID = 'Z38F5DTMLWVMS'
