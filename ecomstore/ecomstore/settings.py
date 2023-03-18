@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'utils',
     'cart',
     'checkout',
+    'accounts',
     # 'djangodblog',
 ]
 
@@ -85,6 +86,7 @@ TEMPLATES = [
             'main/templates/main',
             'catalog/templates',
             'cart/templates/cart',
+            'accounts/templates/registration',
             BASE_DIR / "templates",
             ],
         'APP_DIRS': True,
